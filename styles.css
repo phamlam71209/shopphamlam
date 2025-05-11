@@ -1,0 +1,36 @@
+/* styles.css - Custom styles */
+
+/* Đặt font và khoảng dòng cho toàn trang */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Banner section styling */
+.bg-banner {
+    background: url('assets/banner-bg.jpg') no-repeat center center / cover;
+    position: relative;
+}
+.bg-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Tạo nền đen mờ để chữ dễ đọc */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Hiệu ứng hover cho card */
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+}
+
+/* Điều chỉnh responsive */
+@media (max-width: 768px) {
+    .bg-banner {
+        height: 50vh;
+    }
+}
