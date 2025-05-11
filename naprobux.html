@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Nạp Robux - BidaithanRoblox</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">BidaithanRoblox</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" 
+            aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav2">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+        <li class="nav-item"><a class="nav-link active" href="naprobux.html">Nạp Robux</a></li>
+        <li class="nav-item"><a class="nav-link" href="leaderboard.html">Xếp hạng</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Top-up Form Section -->
+<section class="container my-5">
+  <h2>Nạp Robux</h2>
+  <p>Vui lòng điền thông tin bên dưới để nạp Robux vào tài khoản của bạn.</p>
+  <form id="topupForm">
+    <div class="mb-3">
+      <label for="username" class="form-label">Tên tài khoản Roblox</label>
+      <input type="text" class="form-control" id="username" placeholder="Nhập tên tài khoản" required>
+    </div>
+    <div class="mb-3">
+      <label for="cardType" class="form-label">Loại thẻ nạp</label>
+      <select class="form-select" id="cardType" required>
+        <option value="">Chọn loại thẻ</option>
+        <option value="zing">Thẻ Zing</option>
+        <option value="gate">Thẻ Gate</option>
+        <option value="vcoin">Thẻ Vcoin</option>
+        <option value="mobi">Thẻ Mobi</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="cardCode" class="form-label">Mã thẻ</label>
+      <input type="text" class="form-control" id="cardCode" placeholder="Nhập mã thẻ" required>
+    </div>
+    <div class="mb-3">
+      <label for="cardPin" class="form-label">Số serial/Pin</label>
+      <input type="text" class="form-control" id="cardPin" placeholder="Nhập số serial/Pin">
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Số tiền nạp</label>
+      <input type="number" class="form-control" id="amount" placeholder="Số tiền (VNĐ)" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Nạp ngay</button>
+  </form>
+  <!-- Thông báo kết quả -->
+  <div id="message" class="mt-4" style="display:none;"></div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-3">
+  <p class="mb-0">© 2025 BidaithanRoblox. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom Script: Xử lý form -->
+<script>
+document.getElementById('topupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Lấy giá trị từ form
+    const username = document.getElementById('username').value;
+    const amount = document.getElementById('amount').value;
+    // Hiển thị thông báo thành công giả lập
+    const msgDiv = document.getElementById('message');
+    msgDiv.style.display = 'block';
+    msgDiv.innerHTML = '<div class="alert alert-success">Nạp ' + amount + ' VNĐ thành công cho tài khoản ' + username + '.</div>';
+    // Reset form
+    document.getElementById('topupForm').reset();
+});
+</script>
+</body>
+</html>
